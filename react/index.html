@@ -5,7 +5,7 @@
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script type="text/jsx">
+    <script>
       const app = document.getElementById('app');
 
       function Header({title}) {
@@ -36,9 +36,11 @@
 
       function HomePage() {
         const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+        const [likes, setLikes] = React.useState(0);
 
         function handleClick() {
           console.log('Increment count like');
+          setLikes(likes + 1);
         }
 
         return (
@@ -50,7 +52,7 @@
               ))}
             </ul>
             <Header title="New title"/>
-            <button onClick={handleClick}> Like </button>
+            <button onClick={handleClick}> Like({likes}) </button>
           </div>
         );
       }
