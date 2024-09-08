@@ -37,6 +37,10 @@
       function HomePage() {
         const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
+        function handleClick() {
+          console.log('Increment count like');
+        }
+
         return (
           <div>
             <Header title="React"/>
@@ -46,6 +50,7 @@
               ))}
             </ul>
             <Header title="New title"/>
+            <button onClick={handleClick}> Like </button>
           </div>
         );
       }
