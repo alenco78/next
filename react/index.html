@@ -8,15 +8,37 @@
     <script type="text/jsx">
       const app = document.getElementById('app');
 
-      function Header(props) {
-        console.log('props: ', props);
-        return (<h1>Develop. Preview. Ship.</h1>)
+      function Header({title}) {
+        console.log('props: ', title);
+
+        {/* Object dot notation: props.title */}
+
+        {/* Template literal:  return <h1>{`Cool ${title}`}</h1>; */}
+
+        {/* The returned value of a function:
+          function createTitle(title) {
+            if (title) {
+              return title;
+            } else {
+              return 'Default title';
+            }
+          }
+           
+          function Header({ title }) {
+            return <h1>{createTitle(title)}</h1>;
+          }
+        */}
+
+        {/* Ternary operator: return <h1>{title ? title : 'Default title'} <h1/> */}
+
+        return (<h1>{title}</h1>)
       }
 
       function HomePage() {
         return (
           <div>
             <Header title="React"/>
+            <Header title="New title"/>
           </div>
         );
       }
